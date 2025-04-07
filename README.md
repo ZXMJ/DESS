@@ -1,29 +1,32 @@
-# 大语言模型赋能动态评估与筛选策略的检索优化
-我们将实验分为 **实验1**、**实验2** 两部分进行
+#   DESS : Retrieval Optimization Through Dynamic Evaluation and Selection Strategies Empowered by Large Language Models
 
-## 实验1
-### 创建实验1 conda 环境
+We divided the experiment into two parts **Experiment 1** and **Experiment 2**.
+
+## Experiment 1 ： dessR1
+### Create the experiment 1 conda environment
 ```shell
 conda activate dessR1 python=3.10
 ```
-### 下载实验1 dessR1 requirements
-切换到dessR1目录下的 requirement.txt
+### Download experiment 1 dessR1 requirements
+Switch to requirement.txt in the dessR1 directory.
 ```shell
 pip install -r requirements.txt
 ```
-### 下载elasticsearch-8.9.0
-切换到dessR1环境下下载
-这是下载的地址 [elasticsearch-8.9.0](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.17.3-windows-x86_64.zip)). 
-也可以选择各大云服务器平台提供的elasticsearch，根据自己的需求去进行选择
-也可以参考我基准论文[Blended-RAG项目](https://github.com/ibm-ecosystem-engineering/Blended-RAG)). 
+### Download elasticsearch-8.9.0
+Switch to the dessR1 environment to download
+Here is the download address [elasticsearch-8.9.0](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.17.3-windows-x86_64.zip)). 
+You can also choose the elasticsearch provided by the major cloud server platforms, according to your own needs to choose!
+
+You can also refer to my benchmark paper [Blended-RAG project](https://github.com/ibm-ecosystem-engineering/Blended-RAG)). 
+
+All datasets used in the experiments are publicly available and can be found and downloaded from their respective official websites.
 
 ### Code
-- **rag_msmarco.py**: 这是Msmarco数据集评估的文件.
-- **rag_nq.py**: 这是NQ数据集评估的文件.
-- **rag_squad.py**: 这是squad数据集评估的文件.
-- **rag_trivia.py**: 这是trivia数据集评估的文件.
-- **index**：这个目录下的python文件是上面提到的各个数据集创建索引的文件
-
+- **rag_msmarco.py**: This is the file for the Msmarco dataset evaluation.
+- **rag_nq.py**: This is the file for evaluating the NQ dataset.
+- **rag_squad.py**: This is the file for evaluating the squad dataset.
+- **rag_trivia.py**: This is the file for trivia dataset evaluation.
+- **index**: The python files in this directory are the files that create the indexes for each of the datasets mentioned above.
 
 ### Input 
 This module uses various inputs, such as mapping and search_query, to index and search the queries at the index.
@@ -31,24 +34,23 @@ This module uses various inputs, such as mapping and search_query, to index and 
 - **mapping/**: Contains mapping files with respective BM25, KNN and Sparse_Encoder.
 - **search_query/**: A collection of search_queries used across different evaluation tasks.
 
-
-## 实验2
-### 创建实验2 conda 环境
+## Experiment 2: dessR2
+### Create the experiment 2 conda environment
 ```shell
 conda activate dessR2 python=3.10
 ```
-### 下载实验2 dessR2 requirements
-切换到dessR2目录下的 requirement.txt
+### Download experiment 2 dessR2 requirements
+Switch to requirement.txt in the dessR2 directory.
 ```shell
 pip install -r requirements.txt
 ```
-### 下载pyserini
+### Download pyserini
 ```shell
 pip install -U openai pyserini
 ```
-或者
+Or
 Install `pyserini` by following the [guide](https://github.com/castorini/pyserini#-installation). We use pyserini to conduct dense retrieval and evaluation.
-### 2. 下载及加载数据 
+### 2. Downloading and loading data
 ```shell
 mkdir ./indexes/
 wget https://www.dropbox.com/s/rf24cgsqetwbykr/lucene-index-msmarco-passage.tgz?dl=0
@@ -60,8 +62,8 @@ wget https://www.dropbox.com/s/yms13b9k850b3vt/collection.tsv?dl=0
 # then put tsv file into ./data_msmarco/
 ```
 ### 3. Code.
-- **bm25Contriever.py**: 这是Bm25跟Contriever相结合索引进行评估的文件.
-- **run_dl19.sh** **run_dl20.sh**: 这是两个执行运行命令的脚本文件.
+- **valuation.py**: This is the file that evaluates the indexing of Bm25 in combination with Contriever.
+- **run_dl19.sh** **run_dl20.sh**: These are the two script files that execute the run command.
 ### 4. Run.
 ```shell
 mkdir ./runs_inter
