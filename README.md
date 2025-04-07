@@ -2,7 +2,7 @@
 
 We divided the experiment into two parts **Experiment 1** and **Experiment 2**.
 
-## Experiment 1 ： dessR1
+## Experiment 1 : dessR1
 ### Create the experiment 1 conda environment
 ```shell
 conda activate dessR1 python=3.10
@@ -34,7 +34,7 @@ This module uses various inputs, such as mapping and search_query, to index and 
 - **mapping/**: Contains mapping files with respective BM25, KNN and Sparse_Encoder.
 - **search_query/**: A collection of search_queries used across different evaluation tasks.
 
-## Experiment 2: dessR2
+## Experiment 2 : dessR2
 ### Create the experiment 2 conda environment
 ```shell
 conda activate dessR2 python=3.10
