@@ -1,19 +1,19 @@
-#   DESS : Retrieval Optimization Through Dynamic Evaluation and Selection Strategies Empowered by Large Language Models
+#   Ses : A Retrieval-Generation Synergy approach
 
 We divided the experiment into two parts **Experiment 1** and **Experiment 2**.
 
-## Experiment 1 : dessR1
+## Experiment 1 : sesR1
 ### Create the experiment 1 conda environment
 ```shell
-conda activate dessR1 python=3.10
+conda activate sesR1 python=3.10
 ```
-### Download experiment 1 dessR1 requirements
-Switch to requirement.txt in the dessR1 directory.
+### Download experiment 1 sesR1 requirements
+Switch to requirement.txt in the sesR1 directory.
 ```shell
 pip install -r requirements.txt
 ```
 ### Download elasticsearch-8.9.0
-Switch to the dessR1 environment to download
+Switch to the sesR1 environment to download
 Here is the download address [elasticsearch-8.9.0](https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-8.17.3-windows-x86_64.zip)). 
 You can also choose the elasticsearch provided by the major cloud server platforms, according to your own needs to choose!
 
@@ -34,13 +34,13 @@ This module uses various inputs, such as mapping and search_query, to index and 
 - **mapping/**: Contains mapping files with respective BM25, KNN and Sparse_Encoder.
 - **search_query/**: A collection of search_queries used across different evaluation tasks.
 
-## Experiment 2 : dessR2
+## Experiment 2 : sesR2
 ### Create the experiment 2 conda environment
 ```shell
-conda activate dessR2 python=3.10
+conda activate sesR2 python=3.10
 ```
-### Download experiment 2 dessR2 requirements
-Switch to requirement.txt in the dessR2 directory.
+### Download experiment 2 sesR2 requirements
+Switch to requirement.txt in the sesR2 directory.
 ```shell
 pip install -r requirements.txt
 ```
